@@ -1,0 +1,17 @@
+{
+  "name": "dummy-project",
+  "version": "1.0.0",
+  "description": "Dummy Project to be copied when starting new projects",
+  "main": "./src/server.js",
+  "scripts": {
+    "install": "npm i --save-dev dotenv nodemon && npm i --save cors express mongoose compression express-mongo-sanitize express-rate-limit helmet hpp validator pm2",
+    "dev": "nodemon -r dotenv/config ./src/server.js",
+    "start": "pm2 start server.js --watch --no-daemon"
+  },
+  "author": "Thiago Canaes",
+  "license": "ISC",
+  "type": "module",
+  "engines": {
+    "node": "^14"
+  }
+}

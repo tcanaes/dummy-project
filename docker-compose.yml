@@ -1,0 +1,32 @@
+version: '3.2'
+services:
+  db:
+    image: mongo:latest
+    container_name: dummyDB
+    restart: always
+    ports:
+      - ${DB_PORT}:27017
+    enviroment:
+      MONGO_INITDB_DATABASE: ${DB_NAME}
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
+
+  # api:
+  #   image: node:lts
+  #   container_name: dummyAPI
+  #   restart: always
+  #   env_file:
+  #     - .env
+  #   depends_on:
+  #     - dummyDB
+  #   ports:
+  #     - ${SERVER_PORT}:${SERVER_PORT}
+  #   volumes:
+  #     - .:/usr/src/app
+  #   working_dir: /usr/src/app
+  #   command: npm run start
+  #   logging:
+  #     driver: 'json-file'
+  #     options:
+  #       max-size: '10m'
+  #       max-files: '5'
