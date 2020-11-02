@@ -10,7 +10,9 @@ services:
       MONGO_INITDB_DATABASE: ${DB_NAME}
       MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
       MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
-
+    volumes:
+      - ./local-folder/:/data/db/
+      
   # api:
   #   image: node:lts
   #   container_name: dummyAPI
